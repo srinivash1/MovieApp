@@ -1,26 +1,37 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 
 const MovieDetails = () => {
   const route = useRoute();
-  const { movieId } = route.params;
+  const { id } = route.params;
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://api.themoviedb.org/3/find/864221');
+      console.log(response)
+    } catch (error) {
+      
+    }
+  }
+  useEffect(() => {
+    fetchData()
+  },[])
   return (
     <View style={styles.container}>
-      <Image
+      {/* <Image
         source={{
-          uri: `https://image.tmdb.org/t/p/original/${movieId.backdrop_path}`,
+          uri: `https://image.tmdb.org/t/p/original/${id.backdrop_path}`,
         }}
         style={styles.cardContainer}
         resizeMode="cover"
         overlayColor="rgba(10, 0, 0, 2.5)" 
-      />
+      /> */}
       <View>
         <Text style={styles.titleContainer}>
-            {movieId.original_title}
+            {id.original_title}
         </Text>
         <Text style={styles.movieOverView}>
-            {movieId.overview}
+            {id.overview}
         </Text>
       </View>
     </View>
