@@ -28,27 +28,29 @@ const Card = ({ item }) => {
 
 const styles = StyleSheet.create({
   cardContainer: {
-    height: 384,
-    width: 304,
+    width: 350,
+    height: 120,
     borderRadius: 12, 
     backgroundColor: "#ffffff",
-    marginTop: 20,
-    padding: 20,
+    marginTop: 15,
+    padding: 10,
     display: "flex",
-    justifyContent: "center",
+    flexDirection: "row",
     alignItems: "center",
+    
+   
+    
   },
   image: {
-    width: 256,
-    height: 173,
+    width: 100,
+    height: 100,
     borderRadius: 12,
     backgroundColor: "#DEDEDE",
+    marginRight: 10,
   },
   detailsContainer: {
-    width: 256,
-    height: 81,
-    marginTop: 20,
-    padding: 20
+    flex: 1,
+    height: "100%",
   },
   title: {
     fontSize: 16,
@@ -56,8 +58,55 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   overview: {
-    overflow: "hidden"
+    overflow: "hidden",
   }
 });
 
 export default Card;
+
+
+{/* <View style={styles.cardContainer}>
+<Image
+  source={{
+    uri: `https://image.tmdb.org/t/p/original/${item.poster_path}`,
+  }}
+  style={styles.image}
+  resizeMode="cover"
+/>
+<View style={styles.detailsContainer}>
+  <Text style={styles.title}>{item.original_title}</Text>
+  <Text>{item.release_date}</Text>
+  <Text numberOfLines={2} ellipsizeMode="tail" style={styles.overview}>{item.overview}</Text>
+</View>
+</View> */}
+// cardContainer: {
+//   height: 384,
+//   width: 304,
+//   borderRadius: 12, 
+//   backgroundColor: "#ffffff",
+//   marginTop: 20,
+//   padding: 20,
+//   display: "flex",
+//   justifyContent: "center",
+//   alignItems: "center",
+// },
+// image: {
+//   width: 256,
+//   height: 173,
+//   borderRadius: 12,
+//   backgroundColor: "#DEDEDE",
+// },
+// detailsContainer: {
+//   width: 256,
+//   height: 81,
+//   marginTop: 20,
+//   padding: 20
+// },
+// title: {
+//   fontSize: 16,
+//   fontWeight: 'bold',
+//   marginBottom: 5,
+// },
+// overview: {
+//   overflow: "hidden"
+// }

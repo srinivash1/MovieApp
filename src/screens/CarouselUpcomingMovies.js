@@ -61,10 +61,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 2,
     paddingVertical: 5,
+    margin: 5
   },
   textInput: {
     width: '50%',
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
     fontSize: 16,
     fontWeight: 'bold',
   },
