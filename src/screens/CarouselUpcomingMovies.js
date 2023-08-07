@@ -15,7 +15,7 @@ const CarouselUpcomingMovies = () => {
           value={search}
           autoCorrect={false}
           onChangeText={setSearch} // Use onChangeText to update the search state in the component
-          placeholder='Search for the movie'
+          placeholder='Movie Name'
           style={styles.textInput}
         />
       </View>
@@ -23,7 +23,7 @@ const CarouselUpcomingMovies = () => {
         <ActivityIndicator size="large" color="green" style={styles.loadingIndicator} />
       ) : (
         <>
-          <Text style={styles.textContainer}>The Searched Results - {popularMovies.length}</Text>
+          <Text style={styles.textContainer}>Matching Movies Found - {popularMovies.length}</Text>
           <View style={styles.centeredContainer}>
             <FlatList
               data={popularMovies}
@@ -37,10 +37,6 @@ const CarouselUpcomingMovies = () => {
     </View>
   );
 };
-
-
-
-
 
 
 const styles = StyleSheet.create({
@@ -61,10 +57,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 2,
     paddingVertical: 5,
-    margin: 5
+    margin: 19
   },
   textInput: {
-    width: '50%',
+    width: '40%',
     paddingHorizontal: 20,
     fontSize: 16,
     fontWeight: 'bold',
